@@ -13,7 +13,7 @@ export const portfolio = {
   email: "khaleddjeldjel2002@gmail.com",
 
   github: "https://github.com/djeldjel14",
-  linkedin: "www.linkedin.com/in/khaled-djeldjel-56a174352",
+  linkedin: "https://www.linkedin.com/in/khaled-djeldjel-56a174352",
 
   about: [
     "I'm a Software Engineering Master's student with a strong interest in building reliable and practical software systems.",

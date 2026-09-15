@@ -1786,15 +1786,32 @@ button {
     align-items: flex-start;
   }
 
+  /* Projects — mobile layout */
   .project {
-    grid-template-columns:
-      40px 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 30px 0;
+  }
 
-    gap: 15px;
+  .project-number {
+    margin-bottom: 12px;
+  }
+
+  .project-main h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .project-main p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 16px;
   }
 
   .project-actions {
-    grid-column: 2;
+    grid-column: auto;
+    margin-top: 4px;
   }
 
   .education-item {
@@ -1822,6 +1839,12 @@ button {
     align-items: flex-start;
 
     gap: 25px;
+  }
+  .about-layout {
+    gap: 28px;
+  }
+  .about-content {
+    padding-top: 0;
   }
 }
 
