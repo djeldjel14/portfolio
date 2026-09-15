@@ -22,7 +22,8 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 
-import profileImage from "../assets/profile/khaled.jpg";
+const profileImage =
+  "https://res.cloudinary.com/qwpmd4u0/image/upload/f_auto,q_auto/ChatGPT_Image_Sep_15_2026_at_11_08_32_AM";
 import { portfolio } from "../data/portfolio";
 
 const techIcons = {
@@ -192,9 +193,11 @@ export default function Hero() {
             <div className="profile-ring" />
 
             <img
-              src={profileImage}
-              alt="Khaled Djeldjel"
-              className="profile-image"
+               src={profileImage}
+               alt="Khaled Djeldjel"
+               className="profile-image"
+               draggable="false"
+               onContextMenu={(e) => e.preventDefault()}
             />
 
             <div className="profile-shine" />
