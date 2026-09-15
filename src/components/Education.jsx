@@ -4,41 +4,78 @@ import { portfolio } from "../data/portfolio";
 
 export default function Education() {
   return (
-    <section id="education" className="section section-alt">
+    <section
+      id="education"
+      className="section education-section"
+    >
       <div className="container">
-        <div className="section-heading">
-          <p className="section-label">04 — EDUCATION</p>
-          <h2>My academic journey</h2>
-        </div>
 
-        <div className="timeline">
+        <motion.div
+          className="education-heading"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <p className="small-label">
+            EDUCATION
+          </p>
+
+          <h2>
+            My academic <em>journey.</em>
+          </h2>
+        </motion.div>
+
+        <div className="education-list">
           {portfolio.education.map((item, index) => (
-            <motion.div
-              className="timeline-item"
+            <motion.article
+              className="education-item"
               key={item.degree}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
             >
-              <div className="timeline-icon">
-                <GraduationCap size={20} />
+              <div className="education-icon">
+                <GraduationCap size={21} />
               </div>
 
-              <div className="timeline-content">
-                <span className="timeline-period">
-                  {item.period}
-                </span>
+              <div className="education-info">
+                <span>{item.period}</span>
 
-                <h3>{item.degree}</h3>
+                <h3>
+                  {item.degree}
+                </h3>
 
-                <h4>{item.institution}</h4>
-
-                <p>{item.description}</p>
+                <p>
+                  {item.institution}
+                </p>
               </div>
-            </motion.div>
+
+              <div className="education-index">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+            </motion.article>
           ))}
         </div>
+
       </div>
     </section>
   );

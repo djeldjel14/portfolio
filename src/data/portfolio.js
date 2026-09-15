@@ -3,108 +3,147 @@ export const portfolio = {
 
   role: "Software Engineering Master's Student",
 
-  headline: "I build software that solves real problems.",
+  headline: "I build software with purpose.",
 
   description:
-    "I'm a Software Engineering Master's student from Algeria, focused on backend development, databases, and building practical software applications.",
+    "Software Engineering Master's student focused on backend development, web technologies, databases, and building practical software solutions.",
 
-  location: "Tiaret, Algeria",
+  location: "Algeria",
 
   email: "khaleddjeldjel2002@gmail.com",
 
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
+  github: "https://github.com/djeldjel14",
+  linkedin: "www.linkedin.com/in/khaled-djeldjel-56a174352",
 
   about: [
-    "I'm currently pursuing a Master's degree in Software Engineering and building my skills through academic and personal projects.",
-    "My main interests are backend development, databases, software architecture, and building reliable applications.",
-    "I'm currently strengthening my knowledge of Java, Spring Boot, SQL, JavaScript, and modern web development."
+    "I'm a Software Engineering Master's student with a strong interest in building reliable and practical software systems.",
+    "My background combines programming, databases, web development, software architecture, and problem solving.",
+    "I'm currently focusing on strengthening my backend development skills while continuing to explore modern web technologies."
   ],
 
-  skills: {
-    languages: [
-      "Java",
-      "Python",
-      "JavaScript",
-      "SQL",
-      "HTML",
-      "CSS",
-      "OCaml"
-    ],
-
-    backend: [
-      "Spring Boot",
-      "REST APIs",
-      "JDBC",
-      "Maven"
-    ],
-
-    databases: [
-      "PostgreSQL",
-      "SQL",
-      "Database Design"
-    ],
-
-    tools: [
-      "Git",
-      "GitHub",
-      "IntelliJ IDEA",
-      "VS Code"
-    ]
-  },
+  technologies: [
+    {
+      name: "Java",
+      icon: "java",
+      category: "Language"
+    },
+    {
+      name: "React",
+      icon: "react",
+      category: "Frontend"
+    },
+    {
+      name: "Spring Boot",
+      icon: "spring",
+      category: "Backend"
+    },
+    {
+      name: "JavaScript",
+      icon: "javascript",
+      category: "Language"
+    },
+    {
+      name: "PostgreSQL",
+      icon: "postgresql",
+      category: "Database"
+    },
+    {
+      name: "MySQL",
+      icon: "mysql",
+      category: "Database"
+    },
+    {
+      name: "Git",
+      icon: "git",
+      category: "Tool"
+    },
+    {
+      name: "GitHub",
+      icon: "github",
+      category: "Tool"
+    },
+    {
+      name: "HTML",
+      icon: "html",
+      category: "Frontend"
+    },
+    {
+      name: "CSS",
+      icon: "css",
+      category: "Frontend"
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "tailwind",
+      category: "Frontend"
+    },
+    {
+      name: "C",
+      icon: "c",
+      category: "Language"
+    },
+    {
+      name: "OCaml",
+      icon: "ocaml",
+      category: "Language"
+    },
+    {
+      name: "SQL",
+      icon: "sql",
+      category: "Database"
+    }
+  ],
 
   projects: [
     {
+      number: "01",
       title: "Infoniti",
       description:
-        "A document search engine built with Python and Flask that indexes and searches text and PDF documents.",
-      technologies: ["Python", "Flask", "PyPDF2"],
-      github: "#",
+        "A document search application designed to make searching and retrieving information from documents easier.",
+      technologies: ["JavaScript", "HTML", "CSS"],
+      github: "https://github.com/djeldjel14/infoniti.git",
       demo: "#"
     },
 
     {
-      title: "SmartStore ERP",
+      number: "02",
+      title: "Business Management System",
       description:
-        "An ERP application concept designed for grocery stores to manage sales, inventory, purchases, customers, suppliers and reporting.",
-      technologies: ["Java", "Spring Boot", "PostgreSQL"],
-      github: "#",
+        "A business management application focused on sales, inventory, customers, suppliers and operational management.",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL"
+      ],
+      github: "https://github.com/djeldjel14/smartstore.git",
       demo: "#"
     },
 
     {
-      title: "Personal Portfolio",
+      number: "03",
+      title: "Developer Portfolio",
       description:
-        "A responsive developer portfolio built with React, showcasing my skills, projects and education.",
-      technologies: ["React", "Vite", "JavaScript", "CSS"],
-      github: "#",
+        "A modern interactive portfolio built with React to showcase my skills, projects, education and development journey.",
+      technologies: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS"
+      ],
+      github: "https://github.com/djeldjel14/portfolio.git",
       demo: "#"
     }
   ],
 
   education: [
     {
-      degree: "Master's Degree in Software Engineering",
-      institution: "University Ibn Khaldoun – Tiaret",
-      period: "2025 – 2027",
-      description:
-        "Advanced studies in software engineering, databases, distributed applications, algorithms and software architecture."
+      degree: "Master's Degree — Software Engineering",
+      institution: "University Ibn Khaldoun, Tiaret",
+      period: "2025 — 2027"
     },
-
     {
-      degree: "Bachelor's Degree in Computer Science",
-      institution: "University Ibn Khaldoun – Tiaret",
-      period: "2022 – 2025",
-      description:
-        "Studied programming, algorithms, data structures, databases, web development and software engineering fundamentals."
+      degree: "Bachelor's Degree — Computer Science",
+      institution: "University Ibn Khaldoun, Tiaret",
+      period: "2022 — 2025"
     }
-  ],
-
-  learning: [
-    "Java & Spring Boot",
-    "Backend Development",
-    "REST API Development",
-    "PostgreSQL & SQL",
-    "JavaScript"
   ]
 };

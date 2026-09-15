@@ -1,50 +1,46 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" }
+const links = [
+  ["About", "#about"],
+  ["Skills", "#skills"],
+  ["Projects", "#projects"],
+  ["Education", "#education"],
+  ["Contact", "#contact"]
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleClick = () => {
-    setMenuOpen(false);
-  };
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="navbar">
-      <div className="container navbar-inner">
+      <div className="nav-container">
         <a href="#" className="logo">
-          KD<span>.</span>
+          K<span>D</span>.
         </a>
 
-        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {navItems.map((item) => (
+        <nav className={open ? "nav-links open" : "nav-links"}>
+          {links.map(([name, href]) => (
             <a
-              key={item.label}
-              href={item.href}
-              onClick={handleClick}
+              key={name}
+              href={href}
+              onClick={() => setOpen(false)}
             >
-              {item.label}
+              {name}
             </a>
           ))}
         </nav>
 
-        <a href="#contact" className="nav-cta">
+        <a href="#contact" className="nav-contact">
           Let's Talk
         </a>
 
         <button
-          className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
+          className="mobile-menu"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
         >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X /> : <Menu />}
         </button>
       </div>
     </header>

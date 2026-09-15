@@ -4,36 +4,54 @@ import { portfolio } from "../data/portfolio";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="contact-section">
       <div className="container">
         <motion.div
-          className="contact-content"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          className="contact-inner"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
         >
-          <p className="section-label">05 — CONTACT</p>
+          <p className="small-label">
+            LET'S CONNECT
+          </p>
 
           <h2>
-            Let's build something
+            Have a project or
             <br />
-            <span className="gradient-text">together.</span>
+            an opportunity <em>in mind?</em>
           </h2>
 
           <p>
-            I'm open to internships, junior developer
-            opportunities, collaborations and interesting
-            software projects.
+            Have an opportunity, idea or project
+            you'd like to discuss? I'd love to hear
+            from you.
           </p>
 
           <a
             href={`mailto:${portfolio.email}`}
-            className="button primary contact-button"
+            className="contact-button"
           >
             <Mail size={18} />
-            Send Me an Email
+            Get in touch
             <ArrowUpRight size={18} />
           </a>
+
+          <p className="contact-email">
+            {portfolio.email}
+          </p>
         </motion.div>
       </div>
     </section>

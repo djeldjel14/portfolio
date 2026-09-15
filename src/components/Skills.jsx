@@ -1,66 +1,157 @@
 import { motion } from "framer-motion";
-import { Code2, Server, Database, Wrench } from "lucide-react";
+
+import {
+  FaJava,
+  FaReact,
+  FaJsSquare,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaCss3Alt,
+  FaCode
+} from "react-icons/fa";
+
+import {
+  SiSpringboot,
+  SiPostgresql,
+  SiMysql,
+  SiTailwindcss
+} from "react-icons/si";
+
 import { portfolio } from "../data/portfolio";
 
-const categories = [
-  {
-    key: "languages",
-    title: "Languages",
-    icon: Code2
+const icons = {
+  java: {
+    icon: FaJava,
+    color: "#ED8B00",
   },
-  {
-    key: "backend",
-    title: "Backend",
-    icon: Server
+
+  react: {
+    icon: FaReact,
+    color: "#61DAFB",
   },
-  {
-    key: "databases",
-    title: "Databases",
-    icon: Database
+
+  spring: {
+    icon: SiSpringboot,
+    color: "#6DB33F",
   },
-  {
-    key: "tools",
-    title: "Tools",
-    icon: Wrench
-  }
-];
+
+  javascript: {
+    icon: FaJsSquare,
+    color: "#F7DF1E",
+  },
+
+  postgresql: {
+    icon: SiPostgresql,
+    color: "#4169E1",
+  },
+
+  mysql: {
+    icon: SiMysql,
+    color: "#4479A1",
+  },
+
+  git: {
+    icon: FaGitAlt,
+    color: "#F05032",
+  },
+
+  github: {
+    icon: FaGithub,
+    color: "#F0F0F0",
+  },
+
+  html: {
+    icon: FaHtml5,
+    color: "#E34F26",
+  },
+
+  css: {
+    icon: FaCss3Alt,
+    color: "#1572B6",
+  },
+
+  tailwind: {
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+  },
+
+  c: {
+    icon: FaCode,
+    color: "#A8B9CC",
+  },
+
+  ocaml: {
+    icon: FaCode,
+    color: "#EC6813",
+  },
+
+  sql: {
+    icon: FaCode,
+    color: "#8B5CF6",
+  },
+};
 
 export default function Skills() {
   return (
-    <section id="skills" className="section section-alt">
+    <section id="skills" className="section skills-section">
       <div className="container">
-        <div className="section-heading">
-          <p className="section-label">02 — SKILLS</p>
-          <h2>What I work with</h2>
-        </div>
+          <div className="skills-heading">
+             <p className="small-label">
+               TECHNOLOGIES I WORK WITH
+             </p>
 
-        <div className="skills-grid">
-          {categories.map((category, index) => {
-            const Icon = category.icon;
+             <h2>
+             Tools & <em>technologies.</em>
+             </h2>
+          </div>
 
-            return (
-              <motion.div
-                className="skill-card"
-                key={category.key}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="skill-icon">
-                  <Icon size={22} />
-                </div>
+        <div className="tech-grid">
+          {portfolio.technologies.map(
+            (technology, index) => {
+             const { icon: Icon, color } =
+                icons[technology.icon];
 
-                <h3>{category.title}</h3>
+              return (
+                <motion.div
+                  key={technology.name}
+                  className="tech-card"
+                  initial={{
+                    opacity: 0,
+                    y: 25
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  viewport={{
+                    once: true
+                  }}
+                  transition={{
+                    delay: index * 0.04
+                  }}
+                  whileHover={{
+                    y: -7
+                  }}
+                >
+                  <div className="tech-card-icon">
+                    <Icon
+                       style={{
+                        color: color,
+                       }}
+                    />
+                  </div>
 
-                <div className="skill-list">
-                  {portfolio.skills[category.key].map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+                  <div>
+                    <h3>{technology.name}</h3>
+                    <span>
+                      {technology.category}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            }
+          )}
         </div>
       </div>
     </section>

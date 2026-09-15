@@ -7,66 +7,89 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <div className="section-heading projects-heading">
+
+        <div className="projects-intro">
           <div>
-            <p className="section-label">03 — PROJECTS</p>
-            <h2>Things I've built</h2>
+            <p className="small-label">
+              SELECTED WORK
+            </p>
+
+            <h2>
+              Things I've <em>built.</em>
+            </h2>
           </div>
 
           <p>
-            A selection of academic and personal projects
-            demonstrating my approach to software development.
+            A selection of projects where I've
+            applied programming, databases and
+            software engineering concepts to
+            practical problems.
           </p>
         </div>
 
         <div className="projects-list">
           {portfolio.projects.map((project, index) => (
             <motion.article
-              className="project-card"
+              className="project"
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
             >
               <div className="project-number">
-                0{index + 1}
+                {project.number}
               </div>
 
-              <div className="project-content">
+              <div className="project-main">
                 <h3>{project.title}</h3>
 
                 <p>{project.description}</p>
 
                 <div className="project-tech">
                   {project.technologies.map((tech) => (
-                    <span key={tech}>{tech}</span>
+                    <span key={tech}>
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
 
-              <div className="project-links">
+              <div className="project-actions">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${project.title} GitHub`}
+                  aria-label="GitHub"
                 >
-                  <FaGithub size={20} />
+                  <FaGithub size={18} />
                 </a>
 
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${project.title} Demo`}
+                  aria-label="Live Demo"
                 >
-                  <ArrowUpRight size={22} />
+                  <ArrowUpRight size={20} />
                 </a>
               </div>
             </motion.article>
           ))}
         </div>
+
       </div>
     </section>
   );

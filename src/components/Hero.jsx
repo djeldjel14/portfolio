@@ -1,168 +1,252 @@
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  ArrowUpRight
+  ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 
 import {
+  FaJava,
+  FaReact,
+  FaJsSquare,
+  FaGitAlt,
   FaGithub,
-  FaLinkedin
+  FaHtml5,
+  FaCss3Alt,
 } from "react-icons/fa";
+
+import {
+  SiSpringboot,
+  SiPostgresql,
+  SiMysql,
+  SiTailwindcss,
+} from "react-icons/si";
+
+import profileImage from "../assets/profile/khaled.jpg";
 import { portfolio } from "../data/portfolio";
+
+const techIcons = {
+  java: FaJava,
+  react: FaReact,
+  spring: SiSpringboot,
+  javascript: FaJsSquare,
+  postgresql: SiPostgresql,
+  mysql: SiMysql,
+  git: FaGitAlt,
+  github: FaGithub,
+  html: FaHtml5,
+  css: FaCss3Alt,
+  tailwind: SiTailwindcss,
+};
+
+const floatingTech = [
+  {
+    name: "Java",
+    icon: "java",
+    className: "tech-java",
+    color: "#ED8B00",
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    className: "tech-github",
+    color: "#F0F0F0",
+  },
+  {
+    name: "React",
+    icon: "react",
+    className: "tech-react",
+    color: "#61DAFB",
+  },
+  {
+    name: "Spring Boot",
+    icon: "spring",
+    className: "tech-spring",
+    color: "#6DB33F",
+  },
+  {
+    name: "JavaScript",
+    icon: "javascript",
+    className: "tech-js",
+    color: "#F7DF1E",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "postgresql",
+    className: "tech-postgres",
+    color: "#4169E1",
+  },
+  {
+    name: "MySQL",
+    icon: "mysql",
+    className: "tech-mysql",
+    color: "#4479A1",
+  },
+  {
+    name: "Git",
+    icon: "git",
+    className: "tech-git",
+    color: "#F05032",
+  },
+];
 
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero-grid" />
+      <div className="hero-background">
+        <div className="hero-glow glow-one" />
+        <div className="hero-glow glow-two" />
+        <div className="grid-background" />
+      </div>
 
-      <div className="container hero-content">
+      <div className="hero-container">
+        {/* LEFT SIDE */}
         <motion.div
-          className="hero-text"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          className="hero-copy"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <p className="eyebrow">
+          <div className="status">
+            <span className="status-dot" />
+            Available for opportunities
+          </div>
+
+          <p className="hero-label">
             SOFTWARE ENGINEERING · BACKEND DEVELOPMENT
           </p>
 
           <h1>
             Hi, I'm{" "}
-            <span className="gradient-text">
+            <span className="hero-name">
               Khaled.
             </span>
+
             <br />
-            I build software
+
+            I build
+
             <br />
-            that matters.
+
+            <span className="outline-text">
+              software.
+            </span>
           </h1>
 
           <p className="hero-description">
             {portfolio.description}
           </p>
 
-          <div className="hero-actions">
-            <a href="#projects" className="button primary">
-              View My Work
-              <ArrowUpRight size={18} />
-            </a>
-
-            <a href="#contact" className="button secondary">
-              Get In Touch
-            </a>
+          <div className="hero-location">
+            <MapPin size={15} />
+            {portfolio.location}
           </div>
 
-          <div className="social-links">
+          <div className="hero-buttons">
             <a
-              href={portfolio.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
+              href="#projects"
+              className="hero-button primary"
             >
-              <FaGithub size={20} />
+              Explore My Work
+              <ArrowUpRight size={17} />
             </a>
 
             <a
-              href={portfolio.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
+              href="#contact"
+              className="hero-button secondary"
             >
-              <FaLinkedin size={20} />
+              Contact Me
             </a>
           </div>
         </motion.div>
 
+        {/* RIGHT SIDE */}
         <motion.div
-          className="hero-card"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hero-visual"
+          initial={{
+            opacity: 0,
+            scale: 0.85,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+          }}
         >
-          <div className="code-window">
-            <div className="window-header">
-              <div className="window-dots">
-                <span />
-                <span />
-                <span />
-              </div>
+          {/* Large orbital rings */}
+          <div className="orbit orbit-one" />
+          <div className="orbit orbit-two" />
+          <div className="orbit orbit-three" />
 
-              <span>developer.java</span>
-            </div>
+          {/* Small orbit particles */}
+          <span className="orbit-dot dot-one" />
+          <span className="orbit-dot dot-two" />
+          <span className="orbit-dot dot-three" />
 
-            <div className="code-content">
-              <div>
-                <span className="code-number">01</span>
-                <span className="code-keyword">public class</span>{" "}
-                <span className="code-class">Developer</span>{" "}
-                {"{"}
-              </div>
+          {/* Portrait */}
+          <div className="profile-wrapper">
+            <div className="profile-glow" />
+            <div className="profile-ring" />
 
-              <div>
-                <span className="code-number">02</span>
-                {"  "}
-                <span className="code-keyword">private</span>{" "}
-                <span className="code-type">String</span>{" "}
-                name = <span className="code-string">"Khaled"</span>;
-              </div>
+            <img
+              src={profileImage}
+              alt="Khaled Djeldjel"
+              className="profile-image"
+            />
 
-              <div>
-                <span className="code-number">03</span>
-                {"  "}
-                <span className="code-keyword">private</span>{" "}
-                <span className="code-type">String</span>{" "}
-                focus = <span className="code-string">"Backend"</span>;
-              </div>
+            <div className="profile-shine" />
+          </div>
 
-              <div>
-                <span className="code-number">04</span>
-                {"  "}
-                <span className="code-keyword">private</span>{" "}
-                <span className="code-type">boolean</span>{" "}
-                learning = <span className="code-value">true</span>;
-              </div>
+          {/* Floating technologies */}
+          <div className="tech-orbit">
+            {floatingTech.map(
+              (technology, index) => {
+                const Icon =
+                  techIcons[technology.icon];
 
-              <div>
-                <span className="code-number">05</span>
-              </div>
+                return (
+                  <motion.div
+                    key={technology.name}
+                    className={`floating-tech ${technology.className}`}
+                    animate={{
+                      y: [0, -10, 0],
+                    }}
+                    transition={{
+                      duration:
+                        3 + index * 0.25,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{
+                      scale: 1.15,
+                    }}
+                  >
+                    <Icon
+                      style={{
+                       color: technology.color,
+                      }}
+                    />
 
-              <div>
-                <span className="code-number">06</span>
-                {"  "}
-                <span className="code-keyword">public void</span>{" "}
-                <span className="code-method">build</span>() {"{"}
-              </div>
-
-              <div>
-                <span className="code-number">07</span>
-                {"    "}
-                <span className="code-method">solveProblems</span>();
-              </div>
-
-              <div>
-                <span className="code-number">08</span>
-                {"    "}
-                <span className="code-method">keepLearning</span>();
-              </div>
-
-              <div>
-                <span className="code-number">09</span>
-                {"  "}
-                {"}"}
-              </div>
-
-              <div>
-                <span className="code-number">10</span>
-                {"}"}
-              </div>
-            </div>
+                    <span>
+                      {technology.name}
+                    </span>
+                  </motion.div>
+                );
+              }
+            )}
           </div>
         </motion.div>
       </div>
 
-      <a href="#about" className="scroll-indicator">
-        <span>Scroll to explore</span>
-        <ArrowDown size={16} />
+      <a
+        href="#about"
+        className="scroll-down"
+      >
+        <span>Scroll</span>
+        <ArrowDown size={15} />
       </a>
     </section>
   );
