@@ -777,17 +777,17 @@ button {
    HERO RESPONSIVE
 ======================================== */
 
+/* ================= HERO RESPONSIVE ================= */
+
 @media (max-width: 1000px) {
   .hero-container {
     grid-template-columns: 1fr;
+    gap: 10px;
     text-align: center;
-
-    gap: 0;
   }
 
   .hero-copy {
-    padding: 90px 0 30px;
-
+    padding: 90px 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -797,14 +797,6 @@ button {
     max-width: 650px;
   }
 
-  .hero-visual {
-    width: min(560px, 90vw);
-  }
-
-  .hero h1 {
-    font-size: clamp(58px, 10vw, 90px);
-  }
-
   .hero-location {
     justify-content: center;
   }
@@ -812,138 +804,247 @@ button {
   .hero-buttons {
     justify-content: center;
   }
+
+  .hero-visual {
+    width: min(560px, 90vw);
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 10vw, 90px);
+  }
 }
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
   .hero-container {
-    width: min(100% - 36px, 1280px);
+    width: calc(100% - 32px);
   }
 
   .hero {
     min-height: auto;
+    overflow: hidden;
   }
 
   .hero-copy {
-    padding: 70px 0 10px;
+    padding: 82px 0 0;
   }
 
   .hero-label {
     font-size: 9px;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
+    margin-bottom: 18px;
   }
 
   .hero h1 {
-    font-size: clamp(48px, 15vw, 72px);
+    font-size: clamp(46px, 14vw, 68px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
   }
 
   .hero-description {
-    font-size: 14px;
+    max-width: 340px;
+    margin: 26px 0 16px;
+    font-size: 13px;
     line-height: 1.7;
   }
 
-  .hero-buttons {
-    flex-wrap: wrap;
+  .hero-location {
+    margin-bottom: 22px;
+    font-size: 11px;
   }
+
+  .hero-buttons {
+    gap: 9px;
+  }
+
+  .hero-button {
+    height: 44px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+  /* Visual */
 
   .hero-visual {
     width: 100%;
-    max-width: 430px;
-
-    margin-top: 20px;
+    max-width: 360px;
+    aspect-ratio: 1;
+    margin: 10px auto 0;
   }
 
   .profile-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .profile-image {
-    width: 210px;
-    height: 210px;
-  }
-
-  .profile-ring {
-    width: 240px;
-    height: 240px;
-  }
-
-  .profile-glow {
-    width: 230px;
-    height: 230px;
-  }
-
-  .profile-shine {
-    width: 210px;
-    height: 210px;
-  }
-
-  .orbit-one {
-    width: 330px;
+    width: 220px;
     height: 220px;
   }
 
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-ring {
+    width: 210px;
+    height: 210px;
+  }
+
+  .profile-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-shine {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Orbits */
+
+  .orbit-one {
+    width: 280px;
+    height: 190px;
+  }
+
   .orbit-two {
-    width: 350px;
-    height: 240px;
+    width: 300px;
+    height: 210px;
   }
 
   .orbit-three {
-    width: 360px;
-    height: 260px;
+    width: 315px;
+    height: 225px;
   }
 
+  /* Floating technologies */
+
   .floating-tech svg {
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
   }
 
   .floating-tech span {
-    font-size: 8px;
-    padding: 4px 6px;
+    font-size: 7px;
+    padding: 3px 5px;
   }
 
   .tech-java {
     top: 5%;
-    left: 48%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .tech-github {
-    top: 22%;
-    left: 4%;
+    top: 20%;
+    left: 8%;
   }
 
   .tech-react {
-    top: 22%;
-    right: 0;
+    top: 20%;
+    right: 8%;
   }
 
   .tech-spring {
-    top: 53%;
-    right: -3%;
+    top: 52%;
+    right: 2%;
   }
 
   .tech-js {
     bottom: 13%;
-    right: 4%;
+    right: 9%;
   }
 
   .tech-postgres {
-    bottom: 3%;
-    left: 45%;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .tech-mysql {
-    bottom: 20%;
-    left: 0;
+    bottom: 19%;
+    left: 7%;
   }
 
   .tech-git {
-    top: 48%;
-    left: -3%;
+    top: 49%;
+    left: 3%;
   }
 
   .scroll-down {
     display: none;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 380px) {
+  .hero-container {
+    width: calc(100% - 24px);
+  }
+
+  .hero-copy {
+    padding-top: 78px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-description {
+    max-width: 310px;
+    font-size: 12px;
+  }
+
+  .hero-visual {
+    max-width: 330px;
+  }
+
+  .profile-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-image {
+    width: 165px;
+    height: 165px;
+  }
+
+  .profile-ring {
+    width: 190px;
+    height: 190px;
+  }
+
+  .profile-glow {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-shine {
+    width: 165px;
+    height: 165px;
+  }
+
+  .orbit-one {
+    width: 255px;
+    height: 175px;
+  }
+
+  .orbit-two {
+    width: 275px;
+    height: 190px;
+  }
+
+  .orbit-three {
+    width: 290px;
+    height: 205px;
+  }
+
+  .floating-tech svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .floating-tech span {
+    font-size: 6.5px;
   }
 }
 
